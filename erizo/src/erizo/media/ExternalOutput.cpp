@@ -50,8 +50,8 @@ namespace erizo {
       return false;
     }
     context_->oformat = oformat_;
-    context_->oformat->video_codec = AV_CODEC_ID_H264;
-    context_->oformat->audio_codec = AV_CODEC_ID_AAC;
+    context_->oformat->video_codec = AV_CODEC_ID_VP8;
+    context_->oformat->audio_codec = AV_CODEC_ID_PCM_MULAW;
     url.copy(context_->filename, sizeof(context_->filename),0);
     video_st = NULL;
     audio_st = NULL;
