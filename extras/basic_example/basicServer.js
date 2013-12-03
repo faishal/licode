@@ -15,6 +15,11 @@ var app = express();
 
 app.use(express.bodyParser());
 
+//Prevent server from crashing due to errors
+process.on('uncaughtException', function(err) {
+	console.error(err.stack);
+});
+
 app.configure(function () {
     "use strict";
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
