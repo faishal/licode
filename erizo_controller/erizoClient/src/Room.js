@@ -377,7 +377,7 @@ Erizo.Room = function (spec) {
     };
 
     that.startRecording = function (stream){
-      recordingUrl = "/tmp/recording" + stream.getID() + ".mkv";
+      recordingUrl = "/recording/recording" + stream.getID() + ".mkv";
       L.Logger.debug("Start Recording " + recordingUrl);
       sendMessageSocket('startRecorder',{to:stream.getID(), url: recordingUrl});
     }
