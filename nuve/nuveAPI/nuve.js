@@ -66,4 +66,10 @@ app.get('/rooms/:room/users', usersResource.getList);
 app.get('/rooms/:room/users/:user', userResource.getUser);
 app.delete('/rooms/:room/users/:user', userResource.deleteUser);
 
+//Prevent server from crashing due to errors
+process.on('uncaughtException', function(err) {
+	console.error(err.stack);
+});
+
 app.listen(3000);
+

@@ -548,3 +548,7 @@ rpc.connect(function () {
 
     });
 });
+//Prevent server from crashing due to errors
+process.on('uncaughtException', function(err) {
+    console.error(err.stack);
+});
